@@ -27,7 +27,7 @@ function LineChart() {
       },
       grid: {
         row: {
-          colors: ['lavender', 'transparent'], // takes an array which will be repeated on columns
+          colors: ['red', 'transparent'], // takes an array which will be repeated on columns
           opacity: 0.5
         },
       },

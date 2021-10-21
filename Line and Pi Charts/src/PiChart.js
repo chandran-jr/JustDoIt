@@ -22,7 +22,7 @@ function PiChart() {
             }
     return (
         <div>
-            <ReactApexChart options={options} series={series} type="donut" height={350} width={500} />
+            <ReactApexChart options={options} series={series} type="donut" height={500} width={700} />
         </div>
     )
 }
