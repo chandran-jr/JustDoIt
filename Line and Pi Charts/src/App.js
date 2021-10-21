@@ -33,7 +33,7 @@ function App() {
 
       <div className="drop">
       <FormControl>
-    <InputLabel>Charts</InputLabel>
+    <InputLabel>Line Chart</InputLabel>
     <Select onChange={changeFunc} style={{ width: 200 }}>
     <MenuItem value={10}>Line Chart</MenuItem>
     <MenuItem value={20}>Pi Chart</MenuItem>
@@ -41,13 +41,13 @@ function App() {
     </FormControl>
       </div>
 
+      <div className="dragdrop">
+        <DragDrop/>
+    </div>
+    
     </div>
 
 <div className="rest">
-
-    <div className="dragdrop">
-        <DragDrop/>
-    </div>
 
         <div className="chart">
          {chart}

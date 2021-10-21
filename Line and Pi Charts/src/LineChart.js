@@ -38,7 +38,7 @@ function LineChart() {
 
   return (
     <div className="LineCharts">
-      <ReactApexChart options={options} series={series} type="line" height={350} width={500}/>
+      <ReactApexChart options={options} series={series} type="line" height={525} width={750}/>
     </div>
   );
 }
