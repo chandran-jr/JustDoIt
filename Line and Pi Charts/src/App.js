@@ -44,7 +44,13 @@ function App() {
       <div className="dragdrop">
         <DragDrop/>
     </div>
-    
+
+    <div className="axisinputbox">
+    <h3>Input Axis Labels</h3>
+        <input type="text" className="xbox" placeholder="X-Axis"/>
+        <input type="text" className="ybox" placeholder="Y-Axis"/>
+    </div>
+
     </div>
 
 <div className="rest">

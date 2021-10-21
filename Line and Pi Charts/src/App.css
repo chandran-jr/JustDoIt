@@ -16,13 +16,28 @@
 .dragdrop {
     display: grid;
     place-items: center;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .sidebar {
     height: 725px;
     width: 20%;
     background-image: linear-gradient(#2B32B2,#1488CC);
+}
+
+.xbox {
+    outline: none;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.ybox {
+    outline: none;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .sidebar > h2 {
@@ -53,4 +68,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.axisinputbox > h3 {
+    color: white;
 }
