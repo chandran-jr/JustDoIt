@@ -42,6 +42,9 @@
 
 .sidebar > h2 {
     color: white;
+    margin-top:90%;
+    display: grid;
+    place-items: center;
 }
 
 .drop {

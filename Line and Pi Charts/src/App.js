@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import DragDrop from './DragDrop.js';
 import LineChart from './LineChart.js';
 import PiChart from './PiChart.js';
+import Example from './Example'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 import { Select, MenuItem, FormControl, InputLabel} from '@material-ui/core';
 import './App.css';
 
@@ -40,20 +42,15 @@ function App() {
     </Select>
     </FormControl>
       </div>
-
-      <div className="dragdrop">
-        <DragDrop/>
-    </div>
-
-    <div className="axisinputbox">
-    <h3>Input Axis Labels</h3>
-        <input type="text" className="xbox" placeholder="X-Axis"/>
-        <input type="text" className="ybox" placeholder="Y-Axis"/>
-    </div>
-
     </div>
 
 <div className="rest">
+
+      <div>
+				<DndProvider backend={HTML5Backend}>
+					<Example />
+				</DndProvider>
+			</div>
 
         <div className="chart">
          {chart}
