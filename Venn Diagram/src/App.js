@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from "react";
-import * as d3 from "d3";
-import * as venn from "venn.js";
+import React, { useState } from "react";
+import VennDiagram from './VennDiagram';
 import './App.css';
 
 
@@ -11,17 +10,6 @@ function App() {
   const [abVal, setabVal] = useState(4);
   const [outVal, setoutVal] = useState(19);
 
-  useEffect(() => {
-    const sets = [
-      { sets: ['A'], size: aVal, label: 'A'},
-      { sets: ['B'], size: bVal, label: 'B'},
-      { sets: ['A', 'B'], size: abVal },
-    ];
-
-    let chart = venn.VennDiagram();
-    d3.select("#venn").datum(sets).call(chart);
-  }, [aVal,bVal,abVal]);
-
   return (
 
     <div className="app">
@@ -29,8 +17,6 @@ function App() {
       <div className="inputTable">
 
       <div className="input">
-
-
       <h3>A: </h3>
       <input onChange={(e) => setaVal(e.target.value)} value={aVal} placeholder="Enter value for A" type="number"/>
       </div>
@@ -52,16 +38,14 @@ function App() {
 
       </div>
 
-      <div className="boxVenn">
-
-      <div className="noneval">
-            <h2>{outVal}</h2>
-          </div>
-
-          <div id="venn">
-          </div>
-
-    </div>
+        <div className="venndiag">
+          <VennDiagram 
+            aVal={aVal}
+            bVal={bVal}
+            abVal={abVal}
+            outVal={outVal}
+          />
+        </div>
 
     </div>
 
