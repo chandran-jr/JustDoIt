@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-function LineChart() {
+function LineChart({x,y}) {
 
-   const series= [{
+  const [xaxis,setXaxis] = useState([7,39, 32, 57, 49, 65, 78, 102, 160]);
+  const [yaxis,setYaxis] = useState(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']);
+
+  useEffect(() => {
+    if(x === "Time"){
+      setXaxis([10,20,30,40,50,60,80,90])
+    }
+    if(x === "Speed"){
+      setXaxis([50, 51, 35, 11, 49, 62, 69, 91, 148])
+   }
+   if(x === "Distance"){
+     setXaxis([10, 40, 25, 51, 45, 67, 72, 91, 141])
+   }
+ 
+   if(yaxis === "Speed"){
+     setYaxis([50, 51, 35, 11, 49, 62, 69, 91, 148])
+   }
+   if(yaxis === "Distance"){
+    setYaxis([10, 40, 25, 51, 45, 67, 72, 91, 141])
+  }
+  if(yaxis === "Time"){
+    setYaxis([10,20,30,40,50,60,80,90])
+  }
+ 
+   }, [xaxis,yaxis,x,y]); 
+  
+  
+  const series= [{
         name: "Distance",
-        data: [10,23,30,48,44,70,88,89,112,105,148,154]
+        data: xaxis
     }],
     options= {
       chart: {
@@ -32,7 +59,7 @@ function LineChart() {
         },
       },
       xaxis: {
-        categories: ['0', '1', '2', '3', '4', '5', '6', '7', '8','9', '10', '11'],
+        categories: yaxis,
       }
     }
 

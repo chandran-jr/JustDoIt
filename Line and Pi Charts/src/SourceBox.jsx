@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, memo, } from 'react';
+import { useState,useMemo, memo, } from 'react';
 import { useDrag } from 'react-dnd';
 import { Colors } from './Colors';
 const style = {
@@ -18,11 +18,11 @@ export const SourceBox = memo(function SourceBox({ color, children, }) {
 
     const backgroundColor = useMemo(() => {
         switch (color) {
-            case Colors.YELLOW:
-                return 'lightgoldenrodyellow';
             case Colors.BLUE:
                 return 'lightblue';
             case Colors.SPEED:
+                return 'lightblue';
+            case Colors.DISTANCE:
                 return 'lightblue';
             default:
                 return 'lightgoldenrodyellow';

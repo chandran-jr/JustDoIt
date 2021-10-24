@@ -1,6 +1,7 @@
 import { useState, useCallback, memo } from 'react';
 import { useDrop } from 'react-dnd';
 import { Colors } from './Colors';
+import LineChart from './LineChart';
 const style = {
     border: '1px solid gray',
     height: '7rem',
@@ -11,7 +12,7 @@ const style = {
 };
 const TargetBox = memo(function TargetBox({ onDrop, lastDroppedColor, }) {
     const [{ isOver, draggingColor, canDrop }, drop] = useDrop(() => ({
-        accept: [Colors.YELLOW, Colors.BLUE,Colors.SPEED, Colors.DISTANCE, Colors.REVENUE],
+        accept: [Colors.BLUE,Colors.SPEED, Colors.DISTANCE],
         drop(_item, monitor) {
             onDrop(monitor.getItemType());
             return undefined;
@@ -28,19 +29,21 @@ const TargetBox = memo(function TargetBox({ onDrop, lastDroppedColor, }) {
         case Colors.BLUE:
             backgroundColor = 'lightblue';
             break;
-        case Colors.YELLOW:
+        case Colors.SPEED:
             backgroundColor = 'lightgoldenrodyellow';
             break;
-        case Colors.SPEED:
+        case Colors.DISTANCE:
             backgroundColor = 'lightgoldenrodyellow';
             break;
         default:
             break;
     }
-    return (<div ref={drop} data-color={lastDroppedColor || 'none'} style={{ ...style, backgroundColor, opacity }} role="TargetBox">
+    return (<div ref={drop} data-color={lastDroppedColor || 'none'} style={{ ...style, backgroundColor, opacity }}>
 			<p>Drop X axis here.</p>
 
 			{!canDrop && lastDroppedColor && <p>Last dropped: {lastDroppedColor}</p>}
+
+            <LineChart x={lastDroppedColor} y={lastDroppedColor} />
 		</div>);
 });
 export const StatefulTargetBox = (props) => {

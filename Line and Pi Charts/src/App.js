@@ -19,7 +19,7 @@ function App() {
   console.log(option);
 
   if(option===20) {
-    setChart(<LineChart/>);
+    setChart(<LineChart x={[7,39, 32, 57, 49, 65, 78, 102, 160]} y={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']} />);
   }
   else {
     setChart(<PiChart/>);
