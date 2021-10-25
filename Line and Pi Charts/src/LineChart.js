@@ -1,38 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ReactApexChart from 'react-apexcharts';
+import ChartContext from './Context/chartContext';
 
-function LineChart({x,y}) {
+function LineChart() {
 
-  const [xaxis,setXaxis] = useState([7,39, 32, 57, 49, 65, 78, 102, 160]);
-  const [yaxis,setYaxis] = useState(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']);
+  const [xAxis,setXaxis] = useState();
+  const [yAxis,setYaxis] = useState();
+  const ctx = useContext(ChartContext);
 
   useEffect(() => {
-    if(x === "Time"){
-      setXaxis([10,20,30,40,50,60,80,90])
+    if(ctx.xaxis === "Time"){
+      setYaxis([10,20,30,40,50,60,80,90])
     }
-    if(x === "Speed"){
-      setXaxis([50, 51, 35, 11, 49, 62, 69, 91, 148])
+    if(ctx.xaxis === "Speed"){
+      setYaxis([50, 51, 35, 11, 49, 62, 69, 91, 148])
    }
-   if(x === "Distance"){
-     setXaxis([10, 40, 25, 51, 45, 67, 72, 91, 141])
+   if(ctx.xaxis === "Distance"){
+     setYaxis([10, 40, 25, 51, 45, 67, 72, 91, 141])
    }
  
-   if(yaxis === "Speed"){
-     setYaxis([50, 51, 35, 11, 49, 62, 69, 91, 148])
+   if(ctx.yaxis === "Speed"){
+     setXaxis([50, 51, 35, 11, 49, 62, 69, 91, 148])
    }
-   if(yaxis === "Distance"){
-    setYaxis([10, 40, 25, 51, 45, 67, 72, 91, 141])
+   if(ctx.yaxis === "Distance"){
+    setXaxis([10, 40, 25, 51, 45, 67, 72, 91, 141])
   }
-  if(yaxis === "Time"){
-    setYaxis([10,20,30,40,50,60,80,90])
+  if(ctx.yaxis === "Time"){
+    setXaxis([10,20,30,40,50,60,80,90])
   }
  
-   }, [xaxis,yaxis,x,y]); 
+   }, [ctx]); 
   
   
   const series= [{
         name: "Distance",
-        data: xaxis
+        data: xAxis
     }],
     options= {
       chart: {
@@ -49,7 +51,7 @@ function LineChart({x,y}) {
         curve: 'straight'
       },
       title: {
-        text: 'Distance over Time',
+        text: `${ctx.yaxis} ${ctx.xaxis} graph`,
         align: 'center'
       },
       grid: {
@@ -59,7 +61,7 @@ function LineChart({x,y}) {
         },
       },
       xaxis: {
-        categories: yaxis,
+        categories: yAxis,
       }
     }
 

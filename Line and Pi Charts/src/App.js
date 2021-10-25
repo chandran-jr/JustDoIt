@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import LineChart from './LineChart.js';
 import PiChart from './PiChart.js';
 import Example from './Example'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { Select, MenuItem, FormControl, InputLabel} from '@material-ui/core';
+import ChartContext from './Context/chartContext';
 import './App.css';
 
 
@@ -12,6 +13,7 @@ function App() {
 
  const [chart,setChart] = useState(<LineChart/>);
  const [option,setOption] = useState();
+ const ctx = useContext(ChartContext);
 
 
  const changeFunc = (e) => {
@@ -19,9 +21,11 @@ function App() {
   console.log(option);
 
   if(option===20) {
-    setChart(<LineChart x={[7,39, 32, 57, 49, 65, 78, 102, 160]} y={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']} />);
+    ctx.setLine(true);
+    setChart(<LineChart/>);
   }
   else {
+    ctx.setLine(false);
     setChart(<PiChart/>);
   }
  }
