@@ -1,0 +1,49 @@
+.Card{
+    height: 150px;
+    width: 180px;
+    background-color: white;
+    border: 4px solid rgb(50, 149, 106);
+    border-radius: 10px;
+}
+
+.X {
+    background-color: white !important;
+    color:rgb(20, 234, 102);
+    margin-left: 82%;
+    border:2px solid rgb(20, 234, 102);
+    border-radius: 5px;
+    margin-top: -39px;
+}
+
+.Details {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.Details > h2 {
+    font-size: 26px;
+    font-weight: bold;
+    font-family: cursive;
+    color: rgb(20, 234, 102);
+    margin-top: -2px;
+}
+
+.Details > h4 {
+    font-size: 15px;
+    width: 95%;
+    font-family: cursive;
+    word-wrap: break-word;
+    color: grey;
+    margin-top: -18px;
+    height: 85px;
+}
+
+.Details > p {
+    font-size: 15px;
+    font-family: cursive;
+    color: grey;
+    margin-top: -14px;
+}
+
