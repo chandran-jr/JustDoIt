@@ -1,5 +1,7 @@
 # JustDoIt
 
+ ## A simple React App built with TypeScript as a part of learning it, which just creates and deletes tasks/notes.
+
 <img src="justdoit.PNG" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
