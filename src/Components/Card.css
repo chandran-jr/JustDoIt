@@ -4,6 +4,8 @@
     background-color: white;
     border: 4px solid rgb(50, 149, 106);
     border-radius: 10px;
+    box-shadow: 10px 10px 16px #888888;
+    margin-top: 15px;
 }
 
 .X {
@@ -13,6 +15,13 @@
     border:2px solid rgb(20, 234, 102);
     border-radius: 5px;
     margin-top: -39px;
+    cursor: pointer;
+}
+
+.X:hover{
+    color: white;
+    background-color: rgb(20, 234, 102) !important; 
+    border-radius: 5px;
 }
 
 .Details {

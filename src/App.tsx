@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import {FC, useState} from 'react';
 import './App.css';
 import Card from './Components/Card';
 import {ITask} from './Interfaces';
@@ -31,6 +31,8 @@ const App: FC = () => {
       })
     );
   }
+
+  
 
   return (
     <div className="App">
